@@ -9,32 +9,31 @@ const store = new Vuex.Store({
     memos: [
       {
         id: 1,
-        title: 'サンプル１',
-        content: 'サンプル１の内容'
+        content: 'サンプル'
       },
     ],
     nextMemoId: 3,
   },
 
+  getters: {
+    getMemoById: state => id => {
+      return state.memos.find(element => element.id === id)
+    }
+  },
+
   mutations: {
     addMemo (state, { memo }) {
-      let memoAry = memo.split('\n')
       state.memos.push({
         id: state.nextMemoId,
-        title: memoAry.shift(),
-        content: memoAry.join('\n')
+        content: memo,
       })
       state.nextMemoId++,
       state.save,
       router.push('./')
     },
     updateMemo (state, { memo, memoId }) {
-      let memoAry = memo.split('\n')
-      console.log(memoAry)
-      console.log(state.memos)
       const target = state.memos.find(element => element.id === memoId)
-      target.title = memoAry.shift()
-      target.content = memoAry.join('\n')
+      target.content = memo
       state.save,
       router.push('./')
     },
