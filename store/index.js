@@ -16,9 +16,11 @@ const store = new Vuex.Store({
   },
 
   getters: {
-    getMemoById: state => id => {
-      return state.memos.find(element => element.id === id)
-    }
+    getMemoById (state) {
+      return function (id) {
+        return state.memos.find(element => element.id === id)
+      }
+    },
   },
 
   mutations: {

@@ -9,7 +9,7 @@
   export default {
     data () {
       return {
-        Memo: '',
+        Memo: this.$store.getters.getMemoById(this.$route.params.id).content,
       }
     },
     computed: {
