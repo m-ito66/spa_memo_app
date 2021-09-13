@@ -8,7 +8,7 @@ const store = new Vuex.Store({
     memos: [
       {
         id: 1,
-        title: '牛乳を買う'
+        title: 'サンプル１'
       },
       {
         id: 2,
@@ -24,7 +24,8 @@ const store = new Vuex.Store({
         id: state.nextMemoId,
         title
       })
-      state.nextMemoId++
+      state.nextMemoId++,
+      state.save
     },
   },
 
@@ -35,8 +36,18 @@ const store = new Vuex.Store({
         nextMemoId: state.nextMemoId
       }
       localStorage.setItem('memo-app-data', JSON.stringify(data))
+    },
+    load({ state }) {
+      if (localStorage.getItem('memo-app-data')) {
+        const store = JSON.parse(localStorage.getItem('memo-app-data'))
+        this.replaceState(Object.assign(state, store))
+      }
     }
   }
+})
+
+store.subscribe((mutation, state) => {
+  localStorage.setItem('memo-app-data', JSON.stringify(state))
 })
 
 export default store

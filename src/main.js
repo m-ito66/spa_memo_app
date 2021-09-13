@@ -10,6 +10,6 @@ new Vue({
   store,
   render: h => h(App),
   beforeCreate() {
-    this.$store.dispatch('doLoad')
+    this.$store.dispatch('load')
   }
 }).$mount('#app')

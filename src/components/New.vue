@@ -1,9 +1,7 @@
 <template>
   <div>
-    <form v-on:submit.prevent='addMemo'>
-      <input type='text' v-model='newMemoTitle' placeholder='新しいメモ'>
-    </form>
-    <button type='button' v-on:click='save'>保存</button>
+    <textarea type='text' v-model='newMemoTitle' placeholder='新しいメモ'></textarea>
+    <button @click='addMemo'>登録</button>
   </div>
 </template>
 
