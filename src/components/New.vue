@@ -1,20 +1,9 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/new">New</router-link>
-    </div>
-    <ul>
-      <li v-for='memo in memos' v-bind:key='memo.id'>
-        {{ memo.title }}
-      </li>
-    </ul>
+  <div>
     <form v-on:submit.prevent='addMemo'>
       <input type='text' v-model='newMemoTitle' placeholder='新しいメモ'>
     </form>
-    <h2>保存</h2>
     <button type='button' v-on:click='save'>保存</button>
-    <router-view/>
   </div>
 </template>
 
@@ -45,5 +34,4 @@
     }
   }
 </script>
-
 
