@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import router from '../src/router'
 
 Vue.use(Vuex)
 
@@ -8,24 +9,24 @@ const store = new Vuex.Store({
     memos: [
       {
         id: 1,
-        title: 'サンプル１'
+        title: 'サンプル１',
+        content: 'サンプル１の内容'
       },
-      {
-        id: 2,
-        title: 'Vue.jsの本を買う'
-      }
     ],
     nextMemoId: 3,
   },
 
   mutations: {
-    addMemo (state, { title }) {
+    addMemo (state, { memo }) {
+      let memoAry = memo.split('\n')
       state.memos.push({
         id: state.nextMemoId,
-        title
+        title: memoAry.shift(),
+        content: memoAry.join('\n')
       })
       state.nextMemoId++,
-      state.save
+      state.save,
+      router.push('./')
     },
   },
 

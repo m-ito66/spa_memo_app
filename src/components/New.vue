@@ -1,6 +1,6 @@
 <template>
   <div>
-    <textarea type='text' v-model='newMemoTitle' placeholder='新しいメモ'></textarea>
+    <textarea type='text' v-model='newMemo' placeholder='新しいメモ'></textarea>
     <button @click='addMemo'>登録</button>
   </div>
 </template>
@@ -9,7 +9,7 @@
   export default {
     data () {
       return {
-        newMemoTitle: '',
+        newMemo: '',
       }
     },
     computed: {
@@ -21,9 +21,9 @@
     methods: {
       addMemo () {
         this.$store.commit('addMemo', {
-          title: this.newMemoTitle,
+          memo: this.newMemo,
         })
-        this.newMemoTitle = ''
+        this.newMemo = ''
       },
 
       save () {
