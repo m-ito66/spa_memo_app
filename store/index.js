@@ -28,6 +28,16 @@ const store = new Vuex.Store({
       state.save,
       router.push('./')
     },
+    updateMemo (state, { memo, memoId }) {
+      let memoAry = memo.split('\n')
+      console.log(memoAry)
+      console.log(state.memos)
+      const target = state.memos.find(element => element.id === memoId)
+      target.title = memoAry.shift()
+      target.content = memoAry.join('\n')
+      state.save,
+      router.push('./')
+    },
   },
 
   actions: {

@@ -1,7 +1,7 @@
 <template>
   <div class="edit">
     <Header/>
-    <New/>
+    <Edit/>
     <MemoIndex/>
   </div>
 </template>
@@ -10,14 +10,14 @@
 // @ is an alias to /src
 import Header from '@/components/Header.vue'
 import MemoIndex from '@/components/MemoIndex.vue'
-import New from '@/components/New.vue'
+import Edit from '@/components/Edit.vue'
 
 export default {
-  name: 'new',
+  name: 'edit',
   components: {
     'Header' :Header,
     'MemoIndex' :MemoIndex,
-    'New' :New
+    'Edit' :Edit
   }
 }
 </script>

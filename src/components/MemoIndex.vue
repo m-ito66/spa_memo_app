@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li v-for='memo in memos' v-bind:key='memo.id'>
-        {{ memo.title }}
+        <router-link :to="{ name: 'memo', params: { id: memo.id }}">{{ memo.title }}</router-link>
       </li>
       <li><router-link to="/new">＋新規作成</router-link></li>
     </ul>
