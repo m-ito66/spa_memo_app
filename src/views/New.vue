@@ -5,7 +5,7 @@
     </header>
     <div class='contents'>
       <div class='index'>
-        <MemoIndex/>
+        <Index/>
       </div>
       <div class='form'>
         <New/>
@@ -16,14 +16,14 @@
 
 <script>
 import Header from '@/components/Header.vue'
-import MemoIndex from '@/components/MemoIndex.vue'
+import Index from '@/components/Index.vue'
 import New from '@/components/New.vue'
 
 export default {
   name: 'new',
   components: {
     'Header' :Header,
-    'MemoIndex' :MemoIndex,
+    'Index' :Index,
     'New' :New
   }
 }

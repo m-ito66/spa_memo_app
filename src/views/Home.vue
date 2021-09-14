@@ -4,25 +4,20 @@
       <Header/>
     </header>
     <div class='index'>
-      <MemoIndex/>
+      <Index/>
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import Header from '@/components/Header.vue'
-import MemoIndex from '@/components/MemoIndex.vue'
+import Index from '@/components/Index.vue'
 
 export default {
   name: 'Home',
   components: {
     'Header' :Header,
-    'MemoIndex' :MemoIndex
+    'Index' :Index
   }
 }
 </script>
-
-<style>
-  
-</style>
