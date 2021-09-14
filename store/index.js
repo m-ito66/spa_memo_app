@@ -6,13 +6,8 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    memos: [
-      {
-        id: 1,
-        content: 'サンプル'
-      },
-    ],
-    nextMemoId: 3,
+    memos: [],
+    nextMemoId: 1,
   },
 
   getters: {
@@ -34,14 +29,12 @@ const store = new Vuex.Store({
       router.push('./')
     },
     updateMemo (state, { memo, memoId }) {
-      console.log('更新')
       const target = state.memos.find(element => element.id === memoId)
       target.content = memo
       state.save
       router.push('./')
     },
     deleteMemo (state, { memoId }) {
-      console.log('削除')
       const key = state.memos.findIndex(element => element.id === memoId)
       state.memos.splice(key,1)
       state.save
@@ -61,13 +54,10 @@ const store = new Vuex.Store({
       if (localStorage.getItem('memo-app-data')) {
         const store = JSON.parse(localStorage.getItem('memo-app-data'))
         this.replaceState(Object.assign(state, store))
+        router.push('./')
       }
     }
   }
-})
-
-store.subscribe((mutation, state) => {
-  localStorage.setItem('memo-app-data', JSON.stringify(state))
 })
 
 export default store

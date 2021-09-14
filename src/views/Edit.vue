@@ -1,8 +1,14 @@
 <template>
-  <div class="edit">
-    <Header/>
-    <Edit/>
-    <MemoIndex/>
+  <div>
+    <header>
+      <Header/>
+    </header>
+    <div class='index'>
+      <MemoIndex/>
+    </div>
+    <div class='form'>
+      <Edit/>
+    </div>
   </div>
 </template>
 
@@ -21,3 +27,11 @@ export default {
   }
 }
 </script>
+
+<style>
+  .edit {
+    position: fixed;
+    top: 120px;
+    left: 35%;
+  }
+</style>

@@ -1,8 +1,12 @@
 <template>
   <div>
     <textarea type='text' v-model='memo'></textarea>
-    <button @click='updateMemo'>更新</button>
-    <button @click='deleteMemo'>削除</button>
+    <button @click='updateMemo'>
+      更新
+    </button>
+    <button @click='deleteMemo'>
+      削除
+    </button>
   </div>
 </template>
 
@@ -22,7 +26,7 @@
           return this.$store.getters.getMemoById(this.$route.params.id).content
         },
         set(val) {
-          return this.Memo = val
+          this.Memo = val
         }
       }
     },
@@ -48,3 +52,7 @@
     }
   }
 </script>
+
+<style>
+
+</style>

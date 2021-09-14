@@ -1,13 +1,20 @@
 <template>
-  <div class="new">
-    <Header/>
-    <New/>
-    <MemoIndex/>
+  <div>
+    <header>
+      <Header/>
+    </header>
+    <div class='contents'>
+      <div class='index'>
+        <MemoIndex/>
+      </div>
+      <div class='form'>
+        <New/>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import Header from '@/components/Header.vue'
 import MemoIndex from '@/components/MemoIndex.vue'
 import New from '@/components/New.vue'

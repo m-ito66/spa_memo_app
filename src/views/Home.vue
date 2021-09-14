@@ -1,7 +1,11 @@
 <template>
-  <div class="home">
-    <Header/>
-    <MemoIndex/>
+  <div>
+    <header>
+      <Header/>
+    </header>
+    <div class='index'>
+      <MemoIndex/>
+    </div>
   </div>
 </template>
 
@@ -18,3 +22,7 @@ export default {
   }
 }
 </script>
+
+<style>
+  
+</style>

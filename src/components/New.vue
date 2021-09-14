@@ -1,7 +1,9 @@
 <template>
   <div>
     <textarea type='text' v-model='newMemo' placeholder='新しいメモ'></textarea>
-    <button @click='addMemo'>登録</button>
+    <button @click='addMemo'>
+      登録
+    </button>
   </div>
 </template>
 
