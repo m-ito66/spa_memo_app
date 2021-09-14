@@ -23,9 +23,10 @@
     },
     methods: {
       title (memo) {
-        console.log(memo)
-        console.log(memo.content)
         return memo.content.split('\n')[0]
+      },
+      hasContent (memo) {
+        return memo.content
       }
     }
   }

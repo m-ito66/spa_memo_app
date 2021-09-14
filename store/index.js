@@ -34,11 +34,19 @@ const store = new Vuex.Store({
       router.push('./')
     },
     updateMemo (state, { memo, memoId }) {
+      console.log('更新')
       const target = state.memos.find(element => element.id === memoId)
       target.content = memo
-      state.save,
+      state.save
       router.push('./')
     },
+    deleteMemo (state, { memoId }) {
+      console.log('削除')
+      const key = state.memos.findIndex(element => element.id === memoId)
+      state.memos.splice(key,1)
+      state.save
+      router.push('./')
+    }
   },
 
   actions: {
