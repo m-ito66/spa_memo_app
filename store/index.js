@@ -24,20 +24,20 @@ const store = new Vuex.Store({
         id: state.nextMemoId,
         content: memo,
       })
-      state.nextMemoId++,
-      state.save,
+      state.nextMemoId++
+      store.dispatch('save')
       router.push('./')
     },
     updateMemo (state, { memo, memoId }) {
       const target = state.memos.find(element => element.id === memoId)
       target.content = memo
-      state.save
+      store.dispatch('save')
       router.push('./')
     },
     deleteMemo (state, { memoId }) {
       const key = state.memos.findIndex(element => element.id === memoId)
       state.memos.splice(key,1)
-      state.save
+      store.dispatch('save')
       router.push('./')
     }
   },
