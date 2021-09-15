@@ -7,13 +7,12 @@
       <Index/>
     </div>
     <div class='form'>
-      <Edit/>
+      <Edit :targetMemo='memo'/>
     </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
 import Header from '@/components/Header.vue'
 import Index from '@/components/Index.vue'
 import Edit from '@/components/Edit.vue'
@@ -24,6 +23,22 @@ export default {
     'Header' :Header,
     'Index' :Index,
     'Edit' :Edit
+  },
+  created() {
+    this.getMemo()
+  },
+  watch: {
+    $route: 'getMemo'
+  },
+    computed: {
+    memo() {
+      return this.getMemo()
+    }
+  },
+  methods: {
+    getMemo() {
+      return this.$store.getters.getMemoById(this.$route.params.id)
+    }
   }
 }
 </script>
