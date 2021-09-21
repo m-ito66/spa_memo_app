@@ -20,9 +20,9 @@ import Edit from '@/components/Edit.vue'
 export default {
   name: 'edit',
   components: {
-    'Header' :Header,
-    'Index' :Index,
-    'Edit' :Edit
+    Header,
+    Index,
+    Edit
   },
   created() {
     this.getMemo()

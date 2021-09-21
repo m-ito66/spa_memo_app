@@ -16,8 +16,8 @@ import Index from '@/components/Index.vue'
 export default {
   name: 'Home',
   components: {
-    'Header' :Header,
-    'Index' :Index
+    Header,
+    Index
   }
 }
 </script>

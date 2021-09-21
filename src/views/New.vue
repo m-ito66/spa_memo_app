@@ -22,9 +22,9 @@ import New from '@/components/New.vue'
 export default {
   name: 'new',
   components: {
-    'Header' :Header,
-    'Index' :Index,
-    'New' :New
+    Header,
+    Index,
+    New
   }
 }
 </script>
