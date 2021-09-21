@@ -13,7 +13,7 @@ const store = new Vuex.Store({
   getters: {
     getMemoById (state) {
       return function (id) {
-        return state.memos.find(element => element.id === id)
+        return state.memos.find(element => element.id === Number(id))
       }
     },
   },
@@ -54,7 +54,6 @@ const store = new Vuex.Store({
       if (localStorage.getItem('memo-app-data')) {
         const store = JSON.parse(localStorage.getItem('memo-app-data'))
         this.replaceState(Object.assign(state, store))
-        router.push('./')
       }
     }
   }
