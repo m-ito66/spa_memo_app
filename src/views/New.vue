@@ -1,11 +1,9 @@
 <template>
   <div>
-    <header>
-      <Header/>
-    </header>
+    <Header/>
     <div class='contents'>
-      <div class='index'>
-        <Index/>
+      <div class='list-memos'>
+        <ListMemos/>
       </div>
       <div class='form'>
         <New/>
@@ -16,14 +14,14 @@
 
 <script>
 import Header from '@/components/Header.vue'
-import Index from '@/components/Index.vue'
+import ListMemos from '@/components/ListMemos.vue'
 import New from '@/components/New.vue'
 
 export default {
   name: 'new',
   components: {
     Header,
-    Index,
+    ListMemos,
     New
   }
 }

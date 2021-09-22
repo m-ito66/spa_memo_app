@@ -1,10 +1,8 @@
 <template>
   <div>
-    <header>
-      <Header/>
-    </header>
-    <div class='index'>
-      <Index/>
+    <Header/>
+    <div class='list-memos'>
+      <ListMemos/>
     </div>
     <div class='form'>
       <Edit :targetMemo='memo'/>
@@ -14,14 +12,14 @@
 
 <script>
 import Header from '@/components/Header.vue'
-import Index from '@/components/Index.vue'
+import ListMemos from '@/components/ListMemos.vue'
 import Edit from '@/components/Edit.vue'
 
 export default {
   name: 'edit',
   components: {
     Header,
-    Index,
+    ListMemos,
     Edit
   },
   created() {

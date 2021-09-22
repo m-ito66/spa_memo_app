@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <header>
     <h1>メモアプリ</h1>
     <div id="nav">
       <ul>
@@ -11,7 +11,7 @@
         </router-link>
       </ul>
     </div>
-  </div>
+  </header>
 </template>
 
 <style scoped>

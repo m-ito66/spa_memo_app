@@ -11,7 +11,7 @@ h1 {
 header {
     position: fixed;
 }
-.index {
+.list-memos {
   position: fixed;
   top: 120px;
   width: 250px;
